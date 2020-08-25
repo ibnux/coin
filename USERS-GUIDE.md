@@ -1,54 +1,59 @@
-----
-# USERS GUIDE #
+---
 
-----
-## What is in for me with Nxt? ##
+# USERS GUIDE
 
-  - a **decentralized** platform for my assets like money, company shares etc.
-  - almost all trusted third parties **removed**
-  - many useful financial, economical and social features
+---
 
-----
-## What do I need to do? ##
+## What is in for me with NUX?
 
-  - for a quick start, see README.md
-  - for configuration and updates, see OPERATORS-GUIDE.md
+- a **decentralized** platform for my assets like money, company shares etc.
+- almost all trusted third parties **removed**
+- many useful financial, economical and social features
 
-----
-## How does it work? ##
+---
 
-### NRS (Nxt Reference Software) ###
+## What do I need to do?
 
-  - client-server application
-  - JavaFX UI on supported platforms
-  - also access via a Web browser like Mozilla Firefox or Google Chrome
-  - accounts are accessible from everywhere in the world
-  - very strong and long passphrases required
+- for a quick start, see README.md
+- for configuration and updates, see OPERATORS-GUIDE.md
 
-### Nxt ###
+---
 
-  - peer-to-peer protocol
-  - efficient blockchain technology (can run on low-power devices)
-  - allows payment *transactions*, *exchange trading*, *name registrations*, *voting* and much more
-  - no need to trust third parties anymore
+## How does it work?
 
-### Forging (aka block generation) ###
+### NRS (NUX Reference Software)
 
-  - reward for securing the network
-  - start via the browser interface
-  - requires only:
-    - decent amount of the base currency NXT
-    - running NRS (browser or tab can be closed)
-    - very little CPU power
+- client-server application
+- JavaFX UI on supported platforms
+- also access via a Web browser like Mozilla Firefox or Google Chrome
+- accounts are accessible from everywhere in the world
+- very strong and long passphrases required
 
-----
-## How can I contribute? ##
+### NUX
 
-  - review pull requests
-  - help users on issues
-  - join the forums and find places where you can help
-  - get your friends to join Nxt
-  - generate blocks via the forging capability
-  - ask us, the dev team
+- peer-to-peer protocol
+- efficient blockchain technology (can run on low-power devices)
+- allows payment _transactions_, _exchange trading_, _name registrations_, _voting_ and much more
+- no need to trust third parties anymore
 
-----
+### Forging (aka block generation)
+
+- reward for securing the network
+- start via the browser interface
+- requires only:
+  - decent amount of the base currency NUX
+  - running NRS (browser or tab can be closed)
+  - very little CPU power
+
+---
+
+## How can I contribute?
+
+- review pull requests
+- help users on issues
+- join the forums and find places where you can help
+- get your friends to join NUX
+- generate blocks via the forging capability
+- ask us, the dev team
+
+---

@@ -2,7 +2,7 @@
 /.idea/
 /.idea/dictionaries
 /nxt.iml
-/nxt_db
+/nux_db
 /webapps/
 /classes/
 /*.log
@@ -12,7 +12,7 @@
 /keystore
 /nxt.jar
 /nxtservice.jar
-/nxt_test_db
+/nux_test_db
 /README_win.txt
 /nxt.log.lck
 /bin
