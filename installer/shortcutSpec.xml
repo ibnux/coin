@@ -1,0 +1,36 @@
+<shortcuts>
+	<skipIfNotSupported/>
+	<defaultCurrentUser/>
+	<programGroup defaultName="iBNuXCoin" location="startMenu"/>
+	<shortcut
+		name="iBNuXCoin Server"
+		target="$INSTALL_PATH\iBNuXCoin.exe"
+		commandLine=""
+		workingDirectory="$INSTALL_PATH"
+        description="Start iBNuXCoin server"
+		iconFile="$INSTALL_PATH\html\www\favicon.ico"
+        iconIndex="0"
+        initialState="normal"
+        programGroup="yes"
+		desktop="yes"
+        applications="no"
+        startMenu="no"
+		startup="no"
+		runAsAdministrator="true">
+	</shortcut>	
+	<shortcut
+		name="iBNuXCoin Wallet"
+		target="http://localhost:4268/index.html"
+		commandLine=""
+		workingDirectory="$INSTALL_PATH"
+        description="Launch iBNuXCoin wallet in browser"
+		iconFile="$INSTALL_PATH\html\www\favicon.ico"
+        iconIndex="0"
+        initialState="normal"
+        programGroup="yes"
+		desktop="yes"
+        applications="no"
+        startMenu="no"
+		startup="no">
+	</shortcut>	
+</shortcuts>
