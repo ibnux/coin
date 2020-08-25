@@ -1,12 +1,12 @@
 ---
 
-# Welcome to NUX!
+# Welcome to NUX Coin!
 
 ---
 
-## What is NUX?
+## What is NUX Coin?
 
-NUX is a cryptocurrency Coin created by ibnux based NXT.
+NUX coin is a cryptocurrency created by ibnux based NXT.
 
 ---
 
