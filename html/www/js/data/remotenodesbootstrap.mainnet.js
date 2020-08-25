@@ -18,5 +18,6 @@
 RemoteNodesManager.prototype.REMOTE_NODES_BOOTSTRAP =
 {
     "peers": [
+        "167.99.72.249"
     ]
 };

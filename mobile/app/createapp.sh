@@ -6,7 +6,7 @@ then
 	exit 1
 fi
 rm -rf wallet
-cordova create wallet org.nxt.mobile.wallet "NXT Mobile Wallet" --template ../../html
+cordova create wallet net.ibnux.coin.wallet "NuX Mobile Wallet"
 cd wallet
 rm -rf icons
 rm -rf plugins
@@ -16,3 +16,4 @@ cordova platform add ${PLATFORM}
 rm -rf platforms
 cp -a ../../platforms platforms
 cd ..
+./updateapp.sh
