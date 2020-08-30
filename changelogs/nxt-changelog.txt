@@ -491,7 +491,7 @@ node can still return fake asset exchange recent trades or open orders prices,
 or modified voting system poll options and descriptions.
 
 To force using a remote node for testing APIs, the /test-proxy URL can be used
-instead of /test for the API test page, i.e. http://localhost:4268/test-proxy.
+instead of /test for the API test page, i.e. http://localhost:7876/test-proxy.
 
 A new sendTransaction API has been added, similar to broadcastTransaction but
 without validating the transaction, without re-broadcasting the transaction and
@@ -818,7 +818,7 @@ currently running Funding Monitors is accessible from under the cogwheel menu.
 
 
 Client UI page or modal redirection. By adding page or modal parameters to the
-http://localhost:4268/index.html URL, the client can be redirected to open a
+http://localhost:7876/index.html URL, the client can be redirected to open a
 specific page or modal pop-up, with pre-populated parameter values.
 For usage example, see:
 https://bitbucket.org/JeanLucPicard/nxt/pull-requests/42/added-page-redirect-modal-popup-with
@@ -2235,7 +2235,7 @@ model is "By Hash".
 
 Enhanced the /test page to accept and pre-fill the test forms with any parameter
 values supplied in the url, e.g.:
-http://localhost:4268/test?requestType=getBlocks&lastIndex=10
+http://localhost:7876/test?requestType=getBlocks&lastIndex=10
 &includeTransactions=true
 
 
@@ -3484,7 +3484,7 @@ if inStockOnly=false, as delisted goods are considered not to be in stock.
 UI bugfixes and improvements. Added themes settings and a corporate theme.
 Hide fee input when sending NXT in basic mode, and set to the minimum fee.
 
-Improved the http://localhost:4268/test page interface, allow custom API call
+Improved the http://localhost:7876/test page interface, allow custom API call
 selection, syntax highlighting of the response JSON.
 
 Added getAccountAssets API request, returning account asset balances for the
@@ -3739,7 +3739,7 @@ re-validate blocks and transactions during the rescan.
 DbShellServlet:
 
 A command line access to the H2 database at runtime is now possible at:
-http://localhost:4268/dbshell
+http://localhost:7876/dbshell
 This page uses the H2 shell tool to allow querying the database at runtime,
 directly from the browser, without having to enable auto server mode in the jdbc
 url. This servlet is only enabled if nxt.enableDebugAPI=true, and is very unwise
@@ -3747,7 +3747,7 @@ to enable on a publicly accessible node as it allows full read and write access
 to the database.
 
 
-The usability of the http://localhost:4268/test API access page has been further
+The usability of the http://localhost:7876/test API access page has been further
 improved.
 
 
@@ -4073,7 +4073,7 @@ GetDGSGoods request now always skips delisted goods.
 
 Improved handling of IPv6 addresses.
 
-Improved the http://localhost:4268/test interface by adding support for tagging
+Improved the http://localhost:7876/test interface by adding support for tagging
 of API requests in multiple categories. All http API requests are now classified
 under separate tabs for easier navigation.
 
@@ -4489,7 +4489,7 @@ Show (unconfirmed) transaction immediately on dashboard after form submit.
 nxt-client-1.0.0:
 
 The old NRS UI is now disabled by default. Only the new UI is available, at
-http://localhost:4268
+http://localhost:7876
 
 Added Account lease events, Listeners can be registered for LEASE_SCHEDULED,
 LEASE_STARTED and LEASE_ENDED. This is of interest to Java API users only.
@@ -4518,7 +4518,7 @@ the unconfirmed balance of the account when the transaction is accepted into the
 unconfirmed pool, and is refunded back when the transaction is either confirmed,
 or expires and is removed from the pool.
 
-Added Wesley's UI under html/ui, available by default on http://localhost:4268
+Added Wesley's UI under html/ui, available by default on http://localhost:7876
 
 
 --------------------------------------------------------------------------------
@@ -5005,11 +5005,11 @@ for use by Java API clients.
 Added an APITestServlet for manual debugging and testing of the
 API. All http API calls will now automatically be listed under:
 
-http://localhost:4268/test
+http://localhost:7876/test
 
 or if you need to try only a specific one, e.g. getBalance:
 
-http://localhost:4268/test?requestType=getBalance
+http://localhost:7876/test?requestType=getBalance
 
 Unlike the admin.html page, this listing is automatically
 generated and will include all available API calls without

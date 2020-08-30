@@ -1,6 +1,6 @@
 /******************************************************************************
  * Copyright © 2013-2016 The Nxt Core Developers.                             *
- * Copyright © 2016-2019 Jelurida IP B.V.                                     *
+ * Copyright © 2016-2020 Jelurida IP B.V.                                     *
  *                                                                            *
  * See the LICENSE.txt file at the top-level directory of this distribution   *
  * for licensing information.                                                 *
@@ -18,6 +18,5 @@
 RemoteNodesManager.prototype.REMOTE_NODES_BOOTSTRAP =
 {
     "peers": [
-        "167.99.72.249"
     ]
 };

@@ -42,7 +42,7 @@
             desktop="no"
             workingDirectory="$INSTALL_PATH"
             iconFile="$INSTALL_PATH/html/www/img/nxt-icon-32x32.png"
-            url="http://localhost:4268/index.html"
+            url="http://localhost:7876/index.html"
             type="link"
             encoding="UTF-8"
             categories="Application;Network;"
