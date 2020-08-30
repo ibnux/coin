@@ -18,6 +18,5 @@
 RemoteNodesManager.prototype.REMOTE_NODES_BOOTSTRAP =
 {
     "peers": [
-        "https://coin.ibnux.net/"
     ]
 };

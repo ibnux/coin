@@ -12,6 +12,6 @@ if [ -e ~/.${APPLICATION}/nxt.pid ]; then
         STATUS=$?
     done
     rm -f ~/.${APPLICATION}/nxt.pid
-    echo "iBNuXCoin server stopped"
+    echo "Nxt server stopped"
 fi
 

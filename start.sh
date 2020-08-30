@@ -11,7 +11,7 @@ if [ -e ~/.${APPLICATION}/nxt.pid ]; then
     ps -p $PID > /dev/null
     STATUS=$?
     if [ $STATUS -eq 0 ]; then
-        echo "iBNuXCoin server already running"
+        echo "Nxt server already running"
         exit 1
     fi
 fi

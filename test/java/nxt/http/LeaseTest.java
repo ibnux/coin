@@ -87,7 +87,7 @@ public class LeaseTest extends BlockchainTest {
                 includeEffectiveBalance(true).
                 build().invoke();
         Logger.logDebugMessage("getLesseeAccount: " + lesseeResponse);
-        Assert.assertEquals((ALICE.getInitialBalance() + CHUCK.getInitialBalance()) / Constants.FEE_NXT - 1 /* fees */,
+        Assert.assertEquals((ALICE.getInitialBalance() + CHUCK.getInitialBalance()) / Constants.ONE_NXT - 1 /* fees */,
                 lesseeResponse.get("effectiveBalanceNXT"));
         generateBlock();
         lesseeResponse = GetAccountCall.create().

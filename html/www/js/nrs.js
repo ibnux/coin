@@ -61,8 +61,8 @@ var NRS = (function(NRS, $, undefined) {
 		is_store_remembered_passphrase: (window["cordova"] !== undefined), // too early to use feature detection
 	    is_simulate_app: false,
         is_testnet: false,
-        remote_node_address: "https://coin.ibnux.net/",
-        remote_node_port: 42689,
+        remote_node_address: "",
+        remote_node_port: 7876,
         is_remote_node_ssl: false,
         validators_count: 3,
         bootstrap_nodes_count: 5,

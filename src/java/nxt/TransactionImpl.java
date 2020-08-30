@@ -1016,7 +1016,7 @@ final class TransactionImpl implements Transaction {
             long minimumFeeNQT = getMinimumFeeNQT(blockchainHeight);
             if (feeNQT < minimumFeeNQT) {
                 throw new NxtException.NotCurrentlyValidException(String.format("Transaction fee %f %s less than minimum fee %f %s at height %d",
-                        ((double) feeNQT) / Constants.FEE_NXT, Constants.COIN_SYMBOL, ((double) minimumFeeNQT) / Constants.FEE_NXT, Constants.COIN_SYMBOL, blockchainHeight));
+                        ((double) feeNQT) / Constants.ONE_NXT, Constants.COIN_SYMBOL, ((double) minimumFeeNQT) / Constants.ONE_NXT, Constants.COIN_SYMBOL, blockchainHeight));
             }
             if (ecBlockId != 0) {
                 if (blockchainHeight < ecBlockHeight) {
