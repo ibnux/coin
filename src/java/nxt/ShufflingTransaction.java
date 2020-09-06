@@ -55,8 +55,8 @@ public abstract class ShufflingTransaction extends TransactionType {
         }
     }
 
-    private final static Fee SHUFFLING_PROCESSING_FEE = new Fee.ConstantFee(10 * Constants.ONE_NXT);
-    private final static Fee SHUFFLING_RECIPIENTS_FEE = new Fee.ConstantFee(11 * Constants.ONE_NXT);
+    private final static Fee SHUFFLING_PROCESSING_FEE = new Fee.ConstantFee(10 * Constants.FEE_NXT);
+    private final static Fee SHUFFLING_RECIPIENTS_FEE = new Fee.ConstantFee(11 * Constants.FEE_NXT);
 
 
     private ShufflingTransaction() {}

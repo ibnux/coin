@@ -494,7 +494,7 @@ public abstract class TransactionType {
 
         public static final TransactionType ALIAS_ASSIGNMENT = new Messaging() {
 
-            private final Fee ALIAS_FEE = new Fee.SizeBasedFee(2 * Constants.ONE_NXT, 2 * Constants.ONE_NXT, 32) {
+            private final Fee ALIAS_FEE = new Fee.SizeBasedFee(2 * Constants.FEE_NXT, 2 * Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.MessagingAliasAssignment attachment = (Attachment.MessagingAliasAssignment) transaction.getAttachment();
@@ -825,7 +825,7 @@ public abstract class TransactionType {
 
         public final static TransactionType POLL_CREATION = new Messaging() {
 
-            private final Fee POLL_OPTIONS_FEE = new Fee.SizeBasedFee(10 * Constants.ONE_NXT, Constants.ONE_NXT, 1) {
+            private final Fee POLL_OPTIONS_FEE = new Fee.SizeBasedFee(10 * Constants.FEE_NXT, Constants.FEE_NXT, 1) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     int numOptions = ((Attachment.MessagingPollCreation)appendage).getPollOptions().length;
@@ -833,7 +833,7 @@ public abstract class TransactionType {
                 }
             };
 
-            private final Fee POLL_SIZE_FEE = new Fee.SizeBasedFee(0, 2 * Constants.ONE_NXT, 32) {
+            private final Fee POLL_SIZE_FEE = new Fee.SizeBasedFee(0, 2 * Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.MessagingPollCreation attachment = (Attachment.MessagingPollCreation)appendage;
@@ -1050,7 +1050,7 @@ public abstract class TransactionType {
 
             private final Fee PHASING_VOTE_FEE = (transaction, appendage) -> {
                 Attachment.MessagingPhasingVoteCasting attachment = (Attachment.MessagingPhasingVoteCasting) transaction.getAttachment();
-                return attachment.getTransactionFullHashes().size() * Constants.ONE_NXT;
+                return attachment.getTransactionFullHashes().size() * Constants.FEE_NXT;
             };
 
             @Override
@@ -1169,7 +1169,7 @@ public abstract class TransactionType {
 
         public static final Messaging ACCOUNT_INFO = new Messaging() {
 
-            private final Fee ACCOUNT_INFO_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, 2 * Constants.ONE_NXT, 32) {
+            private final Fee ACCOUNT_INFO_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, 2 * Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.MessagingAccountInfo attachment = (Attachment.MessagingAccountInfo) transaction.getAttachment();
@@ -1241,7 +1241,7 @@ public abstract class TransactionType {
 
         public static final Messaging ACCOUNT_PROPERTY = new Messaging() {
 
-            private final Fee ACCOUNT_PROPERTY_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, Constants.ONE_NXT, 32) {
+            private final Fee ACCOUNT_PROPERTY_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.MessagingAccountProperty attachment = (Attachment.MessagingAccountProperty) transaction.getAttachment();
@@ -1394,7 +1394,7 @@ public abstract class TransactionType {
 
         public static final TransactionType ASSET_ISSUANCE = new ColoredCoins() {
 
-            private final Fee SINGLETON_ASSET_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, Constants.ONE_NXT, 32) {
+            private final Fee SINGLETON_ASSET_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, Constants.FEE_NXT, 32) {
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.ColoredCoinsAssetIssuance attachment = (Attachment.ColoredCoinsAssetIssuance) transaction.getAttachment();
                     return attachment.getDescription().length();
@@ -1402,7 +1402,7 @@ public abstract class TransactionType {
             };
 
             private final Fee ASSET_ISSUANCE_FEE = (transaction, appendage) -> isSingletonIssuance(transaction) ?
-                    SINGLETON_ASSET_FEE.getFee(transaction, appendage) : 1000 * Constants.ONE_NXT;
+                    SINGLETON_ASSET_FEE.getFee(transaction, appendage) : 1000 * Constants.FEE_NXT;
 
             @Override
             public final byte getSubtype() {
@@ -1696,7 +1696,7 @@ public abstract class TransactionType {
 
             @Override
             public Fee getBaselineFee(Transaction transaction) {
-                return new Fee.ConstantFee(Constants.ONE_NXT * 10);
+                return new Fee.ConstantFee(Constants.FEE_NXT * 10);
             }
 
             @Override
@@ -2202,7 +2202,7 @@ public abstract class TransactionType {
 
         public static final TransactionType ASSET_PROPERTY_SET = new ColoredCoinsAssetPropertyTransactionType() {
 
-            private final Fee ASSET_PROPERTY_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, Constants.ONE_NXT, 32) {
+            private final Fee ASSET_PROPERTY_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.ColoredCoinsAssetProperty attachment = (Attachment.ColoredCoinsAssetProperty) transaction.getAttachment();
@@ -2370,7 +2370,7 @@ public abstract class TransactionType {
 
         public static final TransactionType LISTING = new DigitalGoods() {
 
-            private final Fee DGS_LISTING_FEE = new Fee.SizeBasedFee(2 * Constants.ONE_NXT, 2 * Constants.ONE_NXT, 32) {
+            private final Fee DGS_LISTING_FEE = new Fee.SizeBasedFee(2 * Constants.FEE_NXT, 2 * Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.DigitalGoodsListing attachment = (Attachment.DigitalGoodsListing) transaction.getAttachment();
@@ -2737,7 +2737,7 @@ public abstract class TransactionType {
 
         public static final TransactionType DELIVERY = new DigitalGoods() {
 
-            private final Fee DGS_DELIVERY_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, 2 * Constants.ONE_NXT, 32) {
+            private final Fee DGS_DELIVERY_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, 2 * Constants.FEE_NXT, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.DigitalGoodsDelivery attachment = (Attachment.DigitalGoodsDelivery) transaction.getAttachment();
@@ -3105,9 +3105,9 @@ public abstract class TransactionType {
                     throw new NxtException.NotValidException("Invalid voting model " + votingModel + " for account control");
                 }
                 long maxFees = attachment.getMaxFees();
-                long maxFeesLimit = (attachment.getPhasingParams().getVoteWeighting().isBalanceIndependent() ? 3 : 22) * Constants.ONE_NXT;
+                long maxFeesLimit = (attachment.getPhasingParams().getVoteWeighting().isBalanceIndependent() ? 3 : 22) * Constants.FEE_NXT;
                 if (maxFees < 0 || (maxFees > 0 && maxFees < maxFeesLimit) || maxFees > Constants.MAX_BALANCE_NQT) {
-                    throw new NxtException.NotValidException(String.format("Invalid max fees %f %s", ((double)maxFees)/Constants.ONE_NXT, Constants.COIN_SYMBOL));
+                    throw new NxtException.NotValidException(String.format("Invalid max fees %f %s", ((double)maxFees)/Constants.FEE_NXT, Constants.COIN_SYMBOL));
                 }
                 short minDuration = attachment.getMinDuration();
                 if (minDuration < 0 || (minDuration > 0 && minDuration < 3) || minDuration >= Constants.MAX_PHASING_DURATION) {
@@ -3155,7 +3155,7 @@ public abstract class TransactionType {
 
     public static abstract class Data extends TransactionType {
 
-        private static final Fee TAGGED_DATA_FEE = new Fee.SizeBasedFee(Constants.ONE_NXT, Constants.ONE_NXT/10) {
+        private static final Fee TAGGED_DATA_FEE = new Fee.SizeBasedFee(Constants.FEE_NXT, Constants.FEE_NXT/10) {
             @Override
             public int getSize(TransactionImpl transaction, Appendix appendix) {
                 return appendix.getFullSize();
