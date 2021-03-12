@@ -2,14 +2,14 @@
 
 desktop=0
 authbind=0
-daemon=0
+daemon=1
 
 help()
 {
     echo "Parameters:"
     echo
     echo "  --desktop : Force desktop mode in the current directory."
-    echo "  --daemon  : Start in daemon mode (background). Use stop.sh to stop the node."
+    echo "  --no-daemon  : Start in daemon mode (background). Use stop.sh to stop the node."
     echo "  --authbind: Use authbind (installed separately) to allow binding of privileged ports."
     exit
 }
@@ -20,7 +20,7 @@ while [ "$1" != "" ]; do
                        ;;
         --authbind )   authbind=1
                        ;;
-        --daemon )     daemon=1
+        --no-daemon )     daemon=0
                        ;;
         * )            help
                        ;;
