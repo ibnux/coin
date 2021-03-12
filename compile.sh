@@ -1,6 +1,6 @@
 #!/bin/sh
 
-skip_desktop=0
+skip_desktop=1
 
 help()
 {
@@ -12,7 +12,7 @@ help()
 
 while [ "$1" != "" ]; do
     case $1 in
-        --skip-desktop )   skip_desktop=1
+        --desktop )   skip_desktop=0
                            ;;
         * )                help
                            ;;
