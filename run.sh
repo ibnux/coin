@@ -50,8 +50,8 @@ if [ $desktop -eq 1 ]; then
   ${JAVACMD} -cp classes:lib/*:conf:addons/classes:addons/lib/*:javafx-sdk/lib/* -Dnxt.runtime.mode=desktop -Dnxt.runtime.dirProvider=nxt.env.DefaultDirProvider nxt.Nxt
 elif [ $daemon -eq 1 ]; then
   echo "Starting daemon mode"
-  if [ -e ~/.${APPLICATION}/nxt.pid ]; then
-    PID=`cat ~/.${APPLICATION}/nxt.pid`
+  if [ -e nuxcoin.pid ]; then
+    PID=`cat nuxcoin.pid`
     ps -p $PID > /dev/null
     STATUS=$?
     if [ $STATUS -eq 0 ]; then
@@ -63,7 +63,7 @@ elif [ $daemon -eq 1 ]; then
   DIR=`dirname "$0"`
   cd "${DIR}"
   nohup ${JAVACMD} -cp classes:lib/*:conf:addons/classes:addons/lib/*:javafx-sdk/lib/* nxt.Nxt > /dev/null 2>&1 &
-  echo $! > ~/.${APPLICATION}/nxt.pid
+  echo $! > nuxcoin.pid
   cd - > /dev/null
 else
   echo "Starting default mode"

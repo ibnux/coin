@@ -1,17 +1,18 @@
 #!/bin/sh
 APPLICATION="iBNuXCoin"
-if [ -e ~/.${APPLICATION}/nxt.pid ]; then
-    PID=`cat ~/.${APPLICATION}/nxt.pid`
+
+if [ -e nuxcoin.pid ]; then
+    PID=`cat nuxcoin.pid`
     ps -p $PID > /dev/null
     STATUS=$?
     echo "stopping"
     while [ $STATUS -eq 0 ]; do
-        kill `cat ~/.${APPLICATION}/nxt.pid` > /dev/null
+        kill `cat nuxcoin.pid` > /dev/null
         sleep 5
         ps -p $PID > /dev/null
         STATUS=$?
     done
-    rm -f ~/.${APPLICATION}/nxt.pid
+    rm -f nuxcoin.pid
     echo "Nxt server stopped"
 fi
 

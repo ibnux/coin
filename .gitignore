@@ -15,6 +15,7 @@
 /nux_test_db
 /README_win.txt
 /nxt.log.lck
+/nuxcoin.pid
 /bin
 /.classpath
 /.project
