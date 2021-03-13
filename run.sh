@@ -4,6 +4,8 @@ desktop=0
 authbind=0
 daemon=1
 
+APPLICATION="iBNuXCoin"
+
 help()
 {
     echo "Parameters:"
@@ -48,8 +50,8 @@ if [ $desktop -eq 1 ]; then
   ${JAVACMD} -cp classes:lib/*:conf:addons/classes:addons/lib/*:javafx-sdk/lib/* -Dnxt.runtime.mode=desktop -Dnxt.runtime.dirProvider=nxt.env.DefaultDirProvider nxt.Nxt
 elif [ $daemon -eq 1 ]; then
   echo "Starting daemon mode"
-  if [ -e ~/.nxt/nxt.pid ]; then
-    PID=`cat ~/.nxt/nxt.pid`
+  if [ -e ~/.${APPLICATION}/nxt.pid ]; then
+    PID=`cat ~/.${APPLICATION}/nxt.pid`
     ps -p $PID > /dev/null
     STATUS=$?
     if [ $STATUS -eq 0 ]; then
@@ -61,7 +63,7 @@ elif [ $daemon -eq 1 ]; then
   DIR=`dirname "$0"`
   cd "${DIR}"
   nohup ${JAVACMD} -cp classes:lib/*:conf:addons/classes:addons/lib/*:javafx-sdk/lib/* nxt.Nxt > /dev/null 2>&1 &
-  echo $! > ~/.nxt/nxt.pid
+  echo $! > ~/.${APPLICATION}/nxt.pid
   cd - > /dev/null
 else
   echo "Starting default mode"
