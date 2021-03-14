@@ -134,8 +134,8 @@ var NRS = (function (NRS, $, undefined) {
             negative = "-";
         }
 
-        var fractionalPart = amount.mod(new BigInteger("100000000")).toString();
-        amount = amount.divide(new BigInteger("100000000"));
+        var fractionalPart = amount.mod(new BigInteger("1")).toString();
+        // amount = amount.divide(new BigInteger("100000000"));
 
         if (fractionalPart && fractionalPart != "0") {
             mantissa = ".";
@@ -894,7 +894,7 @@ var NRS = (function (NRS, $, undefined) {
 
     NRS.formatStyledAmount = function (strAmount, round) {
         var locale = NRS.getLocale();
-        var amount = NRS.formatAmount(strAmount, round).split(locale.decimal);
+        var amount = NRS.formatAmount(strAmount, 0).split(locale.decimal);
 		if (amount.length == 2) {
             return amount[0] + "<span style='font-size:12px'>" + locale.decimal + amount[1] + "</span>";
 		} else {

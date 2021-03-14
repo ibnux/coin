@@ -1235,7 +1235,7 @@ var NRS = (function(NRS, $, undefined) {
                                     var trade = response.trades[i];
                                     assetTotal += assetBalancesMap[trade.asset] * trade.priceNQT / 100000000;
                                 }
-                                $("#account_assets_balance").html(NRS.formatStyledAmount(new Big(assetTotal).toFixed(8)));
+                                $("#account_assets_balance").html(NRS.formatStyledAmount(new Big(assetTotal).toFixed(0)));
                                 $("#account_nr_assets").html(response.trades.length);
                             } else {
                                 $("#account_assets_balance").html(0);
@@ -1270,7 +1270,7 @@ var NRS = (function(NRS, $, undefined) {
                                     var exchange = response.exchanges[i];
                                     currencyTotal += currencyBalancesMap[exchange.currency] * exchange.rateNQT / 100000000;
                                 }
-                                $("#account_currencies_balance").html(NRS.formatStyledAmount(new Big(currencyTotal).toFixed(8)));
+                                $("#account_currencies_balance").html(NRS.formatStyledAmount(new Big(currencyTotal).toFixed(0)));
                             } else {
                                 $("#account_currencies_balance").html(0);
                             }
