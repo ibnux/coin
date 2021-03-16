@@ -146,7 +146,7 @@ var NRS = (function (NRS, $, undefined) {
             "account": String(asset.account),
             "accountRS": String(asset.accountRS),
             "quantityQNT": String(asset.quantityQNT),
-            "decimals": parseInt(asset.decimals, 10)
+            "decimals": parseInt(asset.decimals, 0)
         };
         assets.push(cachedAsset);
     };

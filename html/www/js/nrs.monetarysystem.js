@@ -800,7 +800,7 @@ var NRS = (function (NRS, $, undefined) {
     });
 
     unitFields.on("change", function() {
-        var decimals = parseInt($("#currency_decimals").text(), 10);
+        var decimals = 0;//parseInt($("#currency_decimals").text(), 10);
         var orderType = $(this).data("type").toLowerCase();
         var entity = "currency";
         var units_field = "#" + orderType + "_" + entity + "_units";
@@ -831,7 +831,7 @@ var NRS = (function (NRS, $, undefined) {
             NRS.sendRequest("getBalance", {
                 "account": NRS.accountRS
             }, function (balance) {
-                if (parseInt(response.amountNQT) > parseInt(balance.unconfirmedBalanceNQT - 100000000)) {
+                if (parseInt(response.amountNQT) > parseInt(balance.unconfirmedBalanceNQT)) {
                     totalField.css("background-color", "red");
                     submitButton.prop('disabled', true);
                 } else {

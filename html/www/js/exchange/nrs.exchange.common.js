@@ -20,7 +20,9 @@
 var NRS = (function(NRS, $) {
 
     NRS.invert = function(rate) {
-        return Math.round(100000000 / parseFloat(rate)) / 100000000;
+        //TODO apa ini
+        return Math.round(1 / parseFloat(rate)) / 1;
+        //return Math.round(100000000 / parseFloat(rate)) / 100000000;
     };
 
     NRS.getCoins = function(exchange) {

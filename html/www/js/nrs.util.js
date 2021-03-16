@@ -122,6 +122,8 @@ var NRS = (function (NRS, $, undefined) {
 	};
 
     NRS.convertToNXT = function (amount, returnAsObject) {
+        var unik = Math.random();
+        console.log("convertToNXT: "+amount +" "+unik)
         var negative = "";
         var mantissa = "";
 
@@ -135,7 +137,7 @@ var NRS = (function (NRS, $, undefined) {
         }
 
         var fractionalPart = amount.mod(new BigInteger("1")).toString();
-        // amount = amount.divide(new BigInteger("100000000"));
+        //amount = amount.divide(new BigInteger("0"));
 
         if (fractionalPart && fractionalPart != "0") {
             mantissa = ".";
@@ -148,7 +150,7 @@ var NRS = (function (NRS, $, undefined) {
         }
 
 		amount = amount.toString();
-
+        console.log("convertToNXT: "+amount +" "+unik)
         if (returnAsObject) {
             return {
                 "negative": negative,
@@ -188,26 +190,26 @@ var NRS = (function (NRS, $, undefined) {
 		var parts = currency.split(".");
 
 		var amount = parts[0];
+        //
+		// //no fractional part
+        // var fraction;
+		// if (parts.length == 1) {
+        //     fraction = "";
+		// } else if (parts.length == 2) {
+		// 	if (parts[1].length <= 8) {
+        //         fraction = parts[1];
+		// 	} else {
+        //         fraction = parts[1].substring(0, 8);
+		// 	}
+		// } else {
+		// 	throw $.t("error_invalid_input");
+		// }
+        //
+		// for (var i = fraction.length; i < 8; i++) {
+		// 	fraction += "0";
+		// }
 
-		//no fractional part
-        var fraction;
-		if (parts.length == 1) {
-            fraction = "00000000";
-		} else if (parts.length == 2) {
-			if (parts[1].length <= 8) {
-                fraction = parts[1];
-			} else {
-                fraction = parts[1].substring(0, 8);
-			}
-		} else {
-			throw $.t("error_invalid_input");
-		}
-
-		for (var i = fraction.length; i < 8; i++) {
-			fraction += "0";
-		}
-
-		var result = amount + "" + fraction;
+		var result = amount;//+ "" + fraction;
 
 		//in case there's a comma or something else in there.. at this point there should only be numbers
 		if (!/^\d+$/.test(result)) {

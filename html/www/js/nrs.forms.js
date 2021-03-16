@@ -600,11 +600,11 @@ var NRS = (function(NRS, $) {
 			}
 
 			if ("decimals" in data) {
-                try {
-                    var decimals = parseInt(data.decimals);
-				} catch (err) {
-                    decimals = 0;
-				}
+                // try {
+                //     var decimals = parseInt(data.decimals);
+				// } catch (err) {
+                    var decimals = 0;
+				//}
 
 				if (decimals < 2 || decimals > 6) {
 					if (requestType == "issueAsset" && data.quantityQNT == "1") {
